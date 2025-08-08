@@ -13,9 +13,9 @@ Atmosphere_version=`curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphe
 echo "Atmosphere version: $Atmosphere_version"
 echo "Creating description.txt..."
 cat >> description.txt << ENDOFFILE
-Atmosphere ${Atmosphere_version}
+Atmosphere_${Atmosphere_version}
 fusee
-Hekate + Nyx CHS
+Hekate_Nyx_CHS
 sigpatches
 Lockpick_RCM
 TegraExplorer
