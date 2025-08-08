@@ -46,6 +46,8 @@ mkdir -p ./SwitchSD/switch/.packages
 
 cd SwitchSD
 
+Atmosphere_version=`curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest|grep tag_name|awk -F':' '{print$2}'|sed 's/"//g'|sed 's/,//g'`
+
 latest_release_info=$(curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest)
 download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*atmosphere[^"]*.zip' | sed 's/"//g')
 curl -sL "$download_url" -o atmosphere.zip && {
@@ -390,7 +392,7 @@ else
 fi
 
 cat >> ../description.txt << ENDOFFILE
-Atmosphere
+Atmosphere ${Atmosphere_version}
 fusee
 Hekate + Nyx CHS
 sigpatches
