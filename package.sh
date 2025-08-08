@@ -384,7 +384,7 @@ fi
 
 if [ -f "../extend_app/clean_old_atmosphere.bat" ]; then
     echo "clean_old_atmosphere.bat \033[32m exist\033[0m."
-    mv clean_old_atmosphere.bat ./
+    cp ../extend_app/clean_old_atmosphere.bat ./
 else
     echo "clean_old_atmosphere.bat \033[31m not exist\033[0m."
 fi
