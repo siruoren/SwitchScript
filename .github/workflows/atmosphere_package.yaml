@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'package.sh'
+      - 'atmosphere_version.txt'
 #  schedule:
 #    - cron: 0 8 * * *
 
