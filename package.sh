@@ -116,6 +116,7 @@ if [ `cat ../description.txt | grep -i "^Atmosphere"` ];then
 fi;
 
 if [ `cat ../description.txt | grep -i "^fusee"` ];then
+    latest_release_info=$(curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest)
     download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*fusee.bin' | sed 's/"//g')
     curl -sL "$download_url" -o fusee.bin && {
         echo "fusee download\033[32m success\033[0m."
