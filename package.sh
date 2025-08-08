@@ -237,6 +237,8 @@ fi
 #     rm -rf theme-patches
 # fi
 
+#-- Ultrahand
+
 # latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/nx-ovlloader/releases/latest)
 # download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*nx-ovlloader.zip' | sed 's/"//g')
 # curl -sL "$download_url" -o nx-ovlloader.zip&& {
@@ -293,13 +295,13 @@ fi
 #     rm ldn_mitm.zip
 # } || echo "ldn_mitm download\033[31m failed\033[0m."
 
-latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/emuiibo/releases/latest)
-download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*emuiibo.zip' | sed 's/"//g')
-curl -sL "$download_url" -o emuiibo.zip&& {
-    echo "emuiibo download\033[32m success\033[0m."
-    unzip -oq emuiibo.zip
-    rm emuiibo.zip
-} || echo "emuiibo download\033[31m failed\033[0m."
+# latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/emuiibo/releases/latest)
+# download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*emuiibo.zip' | sed 's/"//g')
+# curl -sL "$download_url" -o emuiibo.zip&& {
+#     echo "emuiibo download\033[32m success\033[0m."
+#     unzip -oq emuiibo.zip
+#     rm emuiibo.zip
+# } || echo "emuiibo download\033[31m failed\033[0m."
 
 # latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/QuickNTP/releases/latest)
 # download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*QuickNTP.zip' | sed 's/"//g')
