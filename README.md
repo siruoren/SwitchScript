@@ -51,6 +51,7 @@
 
   - 其他
     - [x] 蓝牙手柄插件 `MissionControl` [From Here](https://github.com/ndeadly/MissionControl/releases/latest)
+    - [x] 模拟关联任天堂账号工具 `linkalho` [From Here](https://gbatemp.net/download/linkalho.38822/)
 
 - 文件操作：
     - [x] 移动 `fusee.bin` 至 `bootloader/payloads` 文件夹
