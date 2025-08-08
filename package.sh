@@ -369,14 +369,15 @@ curl -sL "$download_url" -o MissionControl.zip&& {
 } || echo "MissionControl download\033[31m failed\033[0m."
 
 
-download_url='https://gbatemp.net/download/linkalho.38822/download'
-curl -sL "$download_url" -o Linkalho.zip&& {
-    echo "Linkalho download\033[32m success\033[0m."
-    unzip -oq Linkalho.zip
-    rm Linkalho.zip
+
+if [ -f "../extend_app/Linkalho.zip" ]; then
+    echo "Linkalho exist\033[32m exist\033[0m."
+    unzip -oq ../extend_app/Linkalho.zip
     mkdir -p ./switch/linkalho
     mv linkalho.nro ./switch/linkalho/
-} || echo "Linkalho download\033[31m failed\033[0m."
+else
+    echo "Linkalho \033[31m not exist\033[0m."
+fi
 
 
 cat >> ../description.txt << ENDOFFILE
