@@ -84,6 +84,7 @@ else
     echo "logo download\033[32m success\033[0m."
     unzip -oq logo.zip
     rm logo.zip
+    cp -f ../extend_app/bootlogo.bmp bootloader/
 fi
 
 latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/Lockpick_RCMDecScots/releases/latest)
