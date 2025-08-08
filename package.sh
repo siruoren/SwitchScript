@@ -29,31 +29,30 @@ hb-appstore
 daybreak
 MissionControl
 Linkalho
-~~Awoo-Installer~~
-~~NX-Activity-Log~~
-~~NXThemesInstaller~~
+~~Awoo-Installer``
+NX-Activity-Log
+NXThemesInstaller
 ~~Tencent-switcher-GUI~~
-~~aio-switch-updater~~
+aio-switch-updater
 ~~wiliwili~~
-~~SimpleModDownloader~~
+SimpleModDownloader
 ~~Switchfin~~
 ~~Moonlight~~
-~~nx-ovlloader~~
-~~Ultrahand-Overlay~~
-~~EdiZon~~
-~~ovl-sysmodules~~
-~~StatusMonitor~~
-~~ReverseNX-RT~~
-~~ldn_mitm~~
-~~emuiibo~~
-~~QuickNTP~~
-~~Fizeau~~
-~~Zing~~
-~~sys-tune~~
-~~sys-patch~~
-~~sys-clk~~
-~~OC_Toolkit_SC_EOS~~
-
+nx-ovlloader
+Ultrahand-Overlay
+EdiZon
+ovl-sysmodules
+StatusMonitor
+ReverseNX-RT
+ldn_mitm
+emuiibo
+QuickNTP
+Fizeau
+Zing
+sys-tune
+sys-patch
+sys-clk
+OC_Toolkit_SC_EOS
 ENDOFFILE
 
 
@@ -205,7 +204,7 @@ curl -sL "$download_url" -o Awoo-Installer.zip && {
 
 fi;
 
-if [ `cat ../description.txt | grep -i "^HekateToolbox"` ];then
+if [ `cat ../description.txt | grep -i "^Hekate-Toolbox"` ];then
 latest_release_info=$(curl -sL https://api.github.com/repos/WerWolv/Hekate-Toolbox/releases/latest)
 download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*HekateToolbox.nro' | sed 's/"//g')
 curl -sL "$download_url" -o HekateToolbox.nro && {
@@ -329,7 +328,7 @@ fi
 
 fi;
 
-if [ `cat ../description.txt | grep -i "^theme-patches"` ];then
+
 git clone https://github.com/exelix11/theme-patches
 if [ $? -ne 0 ]; then
     echo "theme-patches download\033[31m failed\033[0m."
@@ -339,7 +338,7 @@ else
     mv -f theme-patches/systemPatches ./themes/
     rm -rf theme-patches
 fi
-fi;
+
 #-- Ultrahand
 if [ `cat ../description.txt | grep -i "^nx-ovlloader"` ];then
 latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/nx-ovlloader/releases/latest)
