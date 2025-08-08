@@ -292,13 +292,13 @@ fi
 #     rm ldn_mitm.zip
 # } || echo "ldn_mitm download\033[31m failed\033[0m."
 
-# latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/emuiibo/releases/latest)
-# download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*emuiibo.zip' | sed 's/"//g')
-# curl -sL "$download_url" -o emuiibo.zip&& {
-#     echo "emuiibo download\033[32m success\033[0m."
-#     unzip -oq emuiibo.zip
-#     rm emuiibo.zip
-# } || echo "emuiibo download\033[31m failed\033[0m."
+latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/emuiibo/releases/latest)
+download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*emuiibo.zip' | sed 's/"//g')
+curl -sL "$download_url" -o emuiibo.zip&& {
+    echo "emuiibo download\033[32m success\033[0m."
+    unzip -oq emuiibo.zip
+    rm emuiibo.zip
+} || echo "emuiibo download\033[31m failed\033[0m."
 
 # latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/QuickNTP/releases/latest)
 # download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*QuickNTP.zip' | sed 's/"//g')
@@ -389,35 +389,35 @@ TegraExplorer
 CommonProblemResolver
 Switch_90DNS_tester
 DBI
-# Awoo-Installer
+~~Awoo-Installer~~
 Hekate-Toolbox
-# NX-Activity-Log
-# NXThemesInstaller
+~~NX-Activity-Log~~
+~~NXThemesInstaller~~
 JKSV
-# Tencent-switcher-GUI
-# aio-switch-updater
-# wiliwili
-# SimpleModDownloader
-# Switchfin
-# Moonlight
+~~Tencent-switcher-GUI~~
+~~aio-switch-updater~~
+~~wiliwili~~
+~~SimpleModDownloader~~
+~~Switchfin~~
+~~Moonlight~~
 NX-Shell
 hb-appstore
 daybreak
-# nx-ovlloader
-# Ultrahand-Overlay
-# EdiZon
-# ovl-sysmodules
-# StatusMonitor
-# ReverseNX-RT
-# ldn_mitm
-# emuiibo
-# QuickNTP
-# Fizeau
-# Zing
-# sys-tune
-# sys-patch
-# sys-clk
-# OC_Toolkit_SC_EOS
+~~nx-ovlloader~~
+~~Ultrahand-Overlay~~
+~~EdiZon~~
+~~ovl-sysmodules~~
+~~StatusMonitor~~
+~~ReverseNX-RT~~
+~~ldn_mitm~~
+emuiibo
+~~QuickNTP~~
+~~Fizeau~~
+~~Zing~~
+~~sys-tune~~
+~~sys-patch~~
+~~sys-clk~~
+~~OC_Toolkit_SC_EOS~~
 MissionControl
 Linkalho
 ENDOFFILE
