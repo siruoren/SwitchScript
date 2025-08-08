@@ -371,7 +371,7 @@ curl -sL "$download_url" -o MissionControl.zip&& {
 
 
 if [ -f "../extend_app/Linkalho.zip" ]; then
-    echo "Linkalho exist\033[32m exist\033[0m."
+    echo "Linkalho \033[32m exist\033[0m."
     unzip -oq ../extend_app/Linkalho.zip
     mkdir -p ./switch/linkalho
     mv linkalho.nro ./switch/linkalho/
