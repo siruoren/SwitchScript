@@ -399,20 +399,22 @@ TegraExplorer
 CommonProblemResolver
 Switch_90DNS_tester
 DBI
-~~Awoo-Installer~~
 Hekate-Toolbox
+JKSV
+NX-Shell
+hb-appstore
+daybreak
+MissionControl
+Linkalho
+~~Awoo-Installer~~
 ~~NX-Activity-Log~~
 ~~NXThemesInstaller~~
-JKSV
 ~~Tencent-switcher-GUI~~
 ~~aio-switch-updater~~
 ~~wiliwili~~
 ~~SimpleModDownloader~~
 ~~Switchfin~~
 ~~Moonlight~~
-NX-Shell
-hb-appstore
-daybreak
 ~~nx-ovlloader~~
 ~~Ultrahand-Overlay~~
 ~~EdiZon~~
@@ -420,7 +422,7 @@ daybreak
 ~~StatusMonitor~~
 ~~ReverseNX-RT~~
 ~~ldn_mitm~~
-emuiibo
+~~emuiibo~~
 ~~QuickNTP~~
 ~~Fizeau~~
 ~~Zing~~
@@ -428,8 +430,6 @@ emuiibo
 ~~sys-patch~~
 ~~sys-clk~~
 ~~OC_Toolkit_SC_EOS~~
-MissionControl
-Linkalho
 ENDOFFILE
 
 ### Rename hekate_ctcaer_*.bin to payload.bin
