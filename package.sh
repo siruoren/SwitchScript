@@ -13,9 +13,9 @@ Atmosphere_version=`curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphe
 echo "Atmosphere version: $Atmosphere_version"
 echo "Creating description.txt..."
 cat >> description.txt << ENDOFFILE
-Atmosphere_${Atmosphere_version}
+Atmosphere ${Atmosphere_version}
 fusee
-Hekate_Nyx_CHS
+Hekate + Nyx CHS
 sigpatches
 Lockpick_RCM
 TegraExplorer
@@ -94,7 +94,7 @@ mkdir -p ./SwitchSD/switch/.packages
 
 cd SwitchSD
 
-if [ `cat ../description.txt | grep -i "^Atmosphere"` ];then
+if [[ `cat ../description.txt | grep -i "^Atmosphere"|wc -l` != "0" ]];then
     latest_release_info=$(curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest)
     download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*atmosphere[^"]*.zip' | sed 's/"//g')
     curl -sL "$download_url" -o atmosphere.zip && {
@@ -124,7 +124,7 @@ if [ `cat ../description.txt | grep -i "^fusee"` ];then
     } || echo "fusee download\033[31m failed\033[0m."
 fi;
 
-if [ `cat ../description.txt | grep -i "^Hekate"` ];then
+if [[ `cat ../description.txt | grep -i "^Hekate"|wc -l` != "0" ]];then
     latest_release_info=$(curl -sL https://api.github.com/repos/easyworld/hekate/releases/latest)
     download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*hekate_ctcaer[^"]*_sc.zip' | sed 's/"//g')
     curl -sL "$download_url" -o hekate.zip && {
