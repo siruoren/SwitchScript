@@ -412,7 +412,7 @@ while read -r app_name; do
       echo "未知应用 $app_name"
       ;;
   esac
-done < description.txt
+done < ../description.txt
 
 
 ### Rename hekate_ctcaer_*.bin to payload.bin
