@@ -55,6 +55,9 @@ while read -r app_name; do
             unzip -oq atmosphere.zip
             rm atmosphere.zip
         } || echo "atmosphere download\033[31m failed\033[0m."
+      ;;
+    "fusee")
+        latest_release_info=$(curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*fusee.bin' | sed 's/"//g')
         curl -sL "$download_url" -o fusee.bin && {
             echo "fusee download\033[32m success\033[0m."
