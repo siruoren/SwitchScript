@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'description.txt'
+      - 'description.md'
       - 'diy_package.sh'
   # schedule:
   #   - cron: 0 8 * * *
@@ -38,11 +38,11 @@ jobs:
         ./$SCRIPT_SH
         zip -rq SwitchSD.zip SwitchSD
 
-    - name: Read description.txt
+    - name: Read description.md
       id: description
       uses: juliangruber/read-file-action@v1
       with:
-        path: ./description.txt
+        path: ./description.md
 
     - name: Create release
       uses: ncipollo/release-action@v1
