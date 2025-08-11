@@ -6,12 +6,12 @@ on:
       - main
     paths:
       - 'README.md'
-      - 'switchScript.sh'
-  schedule:
-    - cron: 0 8 * * *
+      - 'diy_package.sh'
+  # schedule:
+  #   - cron: 0 8 * * *
 
 env:
-  SCRIPT_SH: switchScript.sh
+  SCRIPT_SH: diy_package.sh
   TZ: Asia/Shanghai
 
 jobs:
