@@ -411,6 +411,15 @@ while read -r app_name; do
             rm MissionControl.zip
         } || echo "MissionControl download\033[31m failed\033[0m."
       ;;
+    "linkalho")
+        {
+            cp -r ../extend_apps/linkalho ./switch/
+            echo "linkalho download\033[32m success\033[0m."
+            
+        } || echo "linkalho download\033[31m failed\033[0m."
+      ;;
+
+
     *)
       echo "未知应用 $app_name"
       ;;
