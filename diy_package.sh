@@ -11,7 +11,7 @@ set -e
 if [ -d SwitchSD ]; then
   rm -rf SwitchSD
 fi
-
+sed -i -e '$a\' description.txt
 
 mkdir -p ./SwitchSD/atmosphere/config
 mkdir -p ./SwitchSD/atmosphere/hosts
