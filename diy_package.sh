@@ -24,22 +24,7 @@ mkdir -p ./SwitchSD/atmosphere/contents/4200000000000000sys-tune
 mkdir -p ./SwitchSD/atmosphere/contents/420000000000000Bsys-patch
 mkdir -p ./SwitchSD/atmosphere/contents/010000000000bd00MissionControl
 mkdir -p ./SwitchSD/atmosphere/contents/00FF0000636C6BFFsys-clk
-mkdir -p ./SwitchSD/atmosphere/kips
 mkdir -p ./SwitchSD/bootloader/payloads
-mkdir -p ./SwitchSD/config/ultrahand/lang
-mkdir -p ./SwitchSD/switch/Switch_90DNS_tester
-mkdir -p ./SwitchSD/switch/DBI
-mkdir -p ./SwitchSD/switch/NX-Shell
-mkdir -p ./SwitchSD/switch/HB-App-Store
-mkdir -p ./SwitchSD/switch/HekateToolbox
-mkdir -p ./SwitchSD/switch/JKSV
-mkdir -p ./SwitchSD/switch/Moonlight
-mkdir -p ./SwitchSD/switch/NXThemesInstaller
-mkdir -p ./SwitchSD/switch/SimpleModDownloader
-mkdir -p ./SwitchSD/switch/Switchfin
-mkdir -p ./SwitchSD/switch/tencent-switcher-gui
-mkdir -p ./SwitchSD/switch/wiliwili
-mkdir -p ./SwitchSD/switch/NX-Activity-Log
 mkdir -p ./SwitchSD/switch/.overlays
 mkdir -p ./SwitchSD/switch/.packages
 
@@ -118,6 +103,7 @@ while read -r app_name; do
         } || echo "CommonProblemResolver download\033[31m failed\033[0m."
       ;;
     "Switch_90DNS_tester")
+        mkdir -p ./switch/Switch_90DNS_tester
         latest_release_info=$(curl -sL https://api.github.com/repos/meganukebmp/Switch_90DNS_tester/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Switch_90DNS_tester.nro' | sed 's/"//g')
         curl -sL "$download_url" -o Switch_90DNS_tester.nro && {
@@ -126,6 +112,7 @@ while read -r app_name; do
         } || echo "Switch_90DNS_tester download\033[31m failed\033[0m."
       ;;
     "DBI")
+        mkdir -p ./switch/DBI
         latest_release_info=$(curl -sL https://api.github.com/repos/rashevskyv/dbi/releases/135856657)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*DBI.nro' | sed 's/"//g')
         curl -sL "$download_url" -o DBI.nro && {
@@ -143,6 +130,7 @@ while read -r app_name; do
         } || echo "Awoo Installer download\033[31m failed\033[0m."
       ;;
     "Hekate-Toolbox")
+        mkdir -p ./switch/HekateToolbox
         latest_release_info=$(curl -sL https://api.github.com/repos/WerWolv/Hekate-Toolbox/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*HekateToolbox.nro' | sed 's/"//g')
         curl -sL "$download_url" -o HekateToolbox.nro && {
@@ -151,6 +139,7 @@ while read -r app_name; do
         } || echo "HekateToolbox download\033[31m failed\033[0m."
       ;;
     "NX-Activity-Log")
+        mkdir -p ./switch/NX-Activity-Log
         latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/NX-Activity-Log/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*NX-Activity-Log.nro' | sed 's/"//g')
         curl -sL "$download_url" -o NX-Activity-Log.nro && {
@@ -159,6 +148,7 @@ while read -r app_name; do
         } || echo "NX-Activity-Log download\033[31m failed\033[0m."
       ;;
     "NXThemesInstaller")
+        mkdir -p ./switch/NXThemesInstaller
         latest_release_info=$(curl -sL https://api.github.com/repos/exelix11/SwitchThemeInjector/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*NXThemesInstaller.nro' | sed 's/"//g')
         curl -sL "$download_url" -o NXThemesInstaller.nro && {
@@ -176,6 +166,7 @@ while read -r app_name; do
         fi
       ;;
     "JKSV")
+        mkdir -p ./switch/JKSV
         latest_release_info=$(curl -sL https://api.github.com/repos/J-D-K/JKSV/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*JKSV.nro' | sed 's/"//g')
         curl -sL "$download_url" -o JKSV.nro && {
@@ -184,6 +175,7 @@ while read -r app_name; do
         } || echo "JKSV download\033[31m failed\033[0m."
       ;;
     "Tencent-switcher-GUI")
+        mkdir -p ./switch/tencent-switcher-gui
         latest_release_info=$(curl -sL https://api.github.com/repos/CaiMiao/Tencent-switcher-GUI/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*tencent-switcher-gui.nro' | sed 's/"//g')
         curl -sL "$download_url" -o tencent-switcher-gui.nro && {
@@ -201,6 +193,7 @@ while read -r app_name; do
         } || echo "aio-switch-updater download\033[31m failed\033[0m."
       ;;
     "wiliwili")
+        mkdir -p ./switch/wiliwili
         latest_release_info=$(curl -sL https://api.github.com/repos/xfangfang/wiliwili/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*wiliwili-NintendoSwitch.zip' | sed 's/"//g')
         curl -sL "$download_url" -o wiliwili-NintendoSwitch.zip && {
@@ -212,6 +205,7 @@ while read -r app_name; do
         } || echo "wiliwili download\033[31m failed\033[0m."
       ;;
     "SimpleModDownloader")
+        mkdir -p ./switch/SimpleModDownloader
         latest_release_info=$(curl -sL https://api.github.com/repos/PoloNX/SimpleModDownloader/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*SimpleModDownloader.nro' | sed 's/"//g')
         curl -sL "$download_url" -o SimpleModDownloader.nro && {
@@ -220,6 +214,7 @@ while read -r app_name; do
         } || echo "SimpleModDownloader download\033[31m failed\033[0m."
       ;;
     "Switchfin")
+        mkdir -p ./switch/Switchfin
         latest_release_info=$(curl -sL https://api.github.com/repos/dragonflylee/switchfin/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Switchfin.nro' | sed 's/"//g')
         curl -sL "$download_url" -o Switchfin.nro&& {
@@ -228,6 +223,7 @@ while read -r app_name; do
         } || echo "Switchfin download\033[31m failed\033[0m."
       ;;
     "Moonlight")
+        mkdir -p ./switch/Moonlight
         latest_release_info=$(curl -sL https://api.github.com/repos/XITRIX/Moonlight-Switch/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Moonlight-Switch.nro' | sed 's/"//g')
         curl -sL "$download_url" -o Moonlight-Switch.nro&& {
@@ -236,6 +232,7 @@ while read -r app_name; do
         } || echo "Moonlight download\033[31m failed\033[0m."
       ;;
     "NX-Shell")
+        mkdir -p ./switch/NX-Shell
         latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/NX-Shell/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*NX-Shell.nro' | sed 's/"//g')
         curl -sL "$download_url" -o NX-Shell.nro&& {
@@ -244,6 +241,7 @@ while read -r app_name; do
         } || echo "NX-Shell download\033[31m failed\033[0m."
       ;;
     "hb-appstore")
+        mkdir -p ./switch/HB-App-Store
         latest_release_info=$(curl -sL https://api.github.com/repos/fortheusers/hb-appstore/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*appstore.nro' | sed 's/"//g')
         curl -sL "$download_url" -o appstore.nro&& {
@@ -272,6 +270,7 @@ while read -r app_name; do
         } || echo "nx-ovlloader download\033[31m failed\033[0m."
       ;;
     "Ultrahand-Overlay")
+        mkdir -p ./config/ultrahand/lang
         latest_release_info=$(curl -sL https://api.github.com/repos/zdm65477730/Ultrahand-Overlay/releases/latest)
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Ultrahand.zip' | sed 's/"//g')
         curl -sL "$download_url" -o Ultrahand.zip&& {
@@ -391,6 +390,7 @@ while read -r app_name; do
         } || echo "sys-clk download\033[31m failed\033[0m."
       ;;
     "OC_Toolkit_SC_EOS")
+        mkdir -p ./atmosphere/kips
         latest_release_info=$(curl -sL https://api.github.com/repos/halop/OC_Toolkit_SC_EOS/releases/latest)
         download_url_1=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*kip.zip' | sed 's/"//g')
         download_url_2=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*OC.Toolkit.u.zip' | sed 's/"//g')
