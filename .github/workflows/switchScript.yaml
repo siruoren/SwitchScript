@@ -34,6 +34,7 @@ jobs:
       run: |
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "tag_name=$(date +%Y%m%d)" >> $GITHUB_ENV
+        echo "atmosphere_version=$(curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest|grep 'tag_name'|awk -F ': ' '{print$2}'|sed 's/"//g'|sed 's/,//g')">> $GITHUB_ENV
         chmod +x $SCRIPT_SH
         ./$SCRIPT_SH
         zip -rq SwitchSD.zip SwitchSD
@@ -47,7 +48,7 @@ jobs:
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.DATE }} ❤️ | 大气层个人整合包
+        name: ${{ env.DATE }} ❤️ | 大气层${{ env.atmosphere_version }}个人整合包
         allowUpdates: true
         tag: ${{ env.tag_name }}
         commit: main
