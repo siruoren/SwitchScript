@@ -37,7 +37,7 @@ jobs:
         echo "atmosphere_version=$(curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest|grep 'tag_name'|awk -F ': ' '{print$2}'|sed 's/"//g'|sed 's/,//g')">> $GITHUB_ENV
         chmod +x $SCRIPT_SH
         ./$SCRIPT_SH
-        zip -rq SwitchSD_${tag_name}.zip SwitchSD
+        zip -rq SwitchSD_$(date +%Y%m%d).zip SwitchSD
 
     - name: Read description.txt
       id: description
