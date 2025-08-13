@@ -34,12 +34,13 @@ jobs:
     - name: "Build & Release"
       run: |
         tag_name=$(date +%Y%m%d)
-        echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
+        DATE=$(date "+%Y%m%d_%H%M%S")
+        echo "DATE=$DATE" >> $GITHUB_ENV
         echo "tag_name=$tag_name" >> $GITHUB_ENV
         echo "atmosphere_version=$(curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest|grep 'tag_name'|awk -F ': ' '{print$2}'|sed 's/"//g'|sed 's/,//g')">> $GITHUB_ENV
         chmod +x $SCRIPT_SH
         ./$SCRIPT_SH
-        zip -rq SwitchSD_$tag_name.zip SwitchSD
+        zip -rq SwitchSD_$DATE.zip SwitchSD
 
     - name: Read description.txt
       id: description
@@ -56,7 +57,7 @@ jobs:
         commit: main
         token: ${{ secrets.actions_release }}
         body: "${{ steps.description.outputs.content }}"
-        artifacts: "SwitchSD_${{ env.tag_name }}.zip"
+        artifacts: "SwitchSD_${{ env.DATE }}.zip"
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.3.2
