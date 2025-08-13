@@ -7,6 +7,7 @@ on:
     paths:
       - 'description.txt'
       - 'diy_package.sh'
+      - '.github/workflows/switchScript.yaml'
   # schedule:
   #   - cron: 0 8 * * *
 
