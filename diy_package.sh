@@ -38,7 +38,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*atmosphere[^"]*.zip' | sed 's/"//g')
         curl -sL "$download_url" -o atmosphere.zip && {
             echo "atmosphere download\033[32m success\033[0m."
-            unzip -o atmosphere.zip
+            unzip -oq atmosphere.zip
             rm atmosphere.zip
         } || echo "atmosphere download\033[31m failed\033[0m."
       ;;
@@ -55,7 +55,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*hekate_ctcaer[^"]*_sc.zip' | sed 's/"//g')
         curl -sL "$download_url" -o hekate.zip && {
             echo "Hekate + Nyx CHS download\033[32m success\033[0m."
-            unzip -o hekate.zip
+            unzip -oq hekate.zip
             rm hekate.zip
         } || echo "Hekate + Nyx CHS download\033[31m failed\033[0m."
       ;;
@@ -66,7 +66,7 @@ while read -r app_name; do
             echo "sigpatches download\033[31m failed\033[0m."
         else
             echo "sigpatches download\033[32m success\033[0m."
-            unzip -o sigpatches.zip
+            unzip -oq sigpatches.zip
             rm sigpatches.zip
         fi
 
@@ -75,7 +75,7 @@ while read -r app_name; do
             echo "logo download\033[31m failed\033[0m."
         else
             echo "logo download\033[32m success\033[0m."
-            unzip -o logo.zip
+            unzip -oq logo.zip
             rm logo.zip
         fi
       ;;
@@ -126,7 +126,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Awoo-Installer.zip' | sed 's/"//g')
         curl -sL "$download_url" -o Awoo-Installer.zip && {
             echo "Awoo Installer download\033[32m success\033[0m."
-            unzip -o Awoo-Installer.zip
+            unzip -oq Awoo-Installer.zip
             rm Awoo-Installer.zip
         } || echo "Awoo Installer download\033[31m failed\033[0m."
       ;;
@@ -189,7 +189,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*aio-switch-updater.zip' | sed 's/"//g')
         curl -sL "$download_url" -o aio-switch-updater.zip && {
             echo "aio-switch-updater download\033[32m success\033[0m."
-            unzip -o aio-switch-updater.zip
+            unzip -oq aio-switch-updater.zip
             rm aio-switch-updater.zip
         } || echo "aio-switch-updater download\033[31m failed\033[0m."
       ;;
@@ -199,7 +199,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*wiliwili-NintendoSwitch.zip' | sed 's/"//g')
         curl -sL "$download_url" -o wiliwili-NintendoSwitch.zip && {
             echo "wiliwili download\033[32m success\033[0m."
-            unzip -o wiliwili-NintendoSwitch.zip
+            unzip -oq wiliwili-NintendoSwitch.zip
             mv wiliwili/wiliwili.nro ./switch/wiliwili
             rm -rf wiliwili
             rm wiliwili-NintendoSwitch.zip
@@ -256,7 +256,7 @@ while read -r app_name; do
             echo "daybreak download\033[31m failed\033[0m."
         else
             echo "daybreak download\033[32m success\033[0m."
-            unzip -o daybreak_x.zip
+            unzip -oq daybreak_x.zip
             rm daybreak_x.zip
         fi
 
@@ -266,7 +266,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*nx-ovlloader.zip' | sed 's/"//g')
         curl -sL "$download_url" -o nx-ovlloader.zip&& {
             echo "nx-ovlloader download\033[32m success\033[0m."
-            unzip -o nx-ovlloader.zip
+            unzip -oq nx-ovlloader.zip
             rm nx-ovlloader.zip
         } || echo "nx-ovlloader download\033[31m failed\033[0m."
       ;;
@@ -276,7 +276,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Ultrahand.zip' | sed 's/"//g')
         curl -sL "$download_url" -o Ultrahand.zip&& {
             echo "Ultrahand-Overlay download\033[32m success\033[0m."
-            unzip -o Ultrahand.zip
+            unzip -oq Ultrahand.zip
             rm Ultrahand.zip
         } || echo "Ultrahand-Overlay download\033[31m failed\033[0m."
       ;;
@@ -285,7 +285,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*EdiZon.zip' | sed 's/"//g')
         curl -sL "$download_url" -o EdiZon.zip&& {
             echo "EdiZon download\033[32m success\033[0m."
-            unzip -o EdiZon.zip
+            unzip -oq EdiZon.zip
             rm EdiZon.zip
         } || echo "EdiZon download\033[31m failed\033[0m."
       ;;
@@ -294,7 +294,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*ovl-sysmodules.zip' | sed 's/"//g')
         curl -sL "$download_url" -o ovl-sysmodules.zip&& {
             echo "ovl-sysmodules download\033[32m success\033[0m."
-            unzip -o ovl-sysmodules.zip
+            unzip -oq ovl-sysmodules.zip
             rm ovl-sysmodules.zip
         } || echo "ovl-sysmodules download\033[31m failed\033[0m."
       ;;
@@ -303,7 +303,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*StatusMonitor.zip' | sed 's/"//g')
         curl -sL "$download_url" -o StatusMonitor.zip&& {
             echo "StatusMonitor download\033[32m success\033[0m."
-            unzip -o StatusMonitor.zip
+            unzip -oq StatusMonitor.zip
             rm StatusMonitor.zip
         } || echo "StatusMonitor download\033[31m failed\033[0m."
 
@@ -313,7 +313,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*ReverseNX-RT.zip' | sed 's/"//g')
         curl -sL "$download_url" -o ReverseNX-RT.zip&& {
             echo "ReverseNX-RT download\033[32m success\033[0m."
-            unzip -o ReverseNX-RT.zip
+            unzip -oq ReverseNX-RT.zip
             rm ReverseNX-RT.zip
         } || echo "ReverseNX-RT download\033[31m failed\033[0m."
       ;;
@@ -322,7 +322,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*ldn_mitm.zip' | sed 's/"//g')
         curl -sL "$download_url" -o ldn_mitm.zip&& {
             echo "ldn_mitm download\033[32m success\033[0m."
-            unzip -o ldn_mitm.zip
+            unzip -oq ldn_mitm.zip
             rm ldn_mitm.zip
         } || echo "ldn_mitm download\033[31m failed\033[0m."
       ;;
@@ -331,7 +331,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*emuiibo.zip' | sed 's/"//g')
         curl -sL "$download_url" -o emuiibo.zip&& {
             echo "emuiibo download\033[32m success\033[0m."
-            unzip -o emuiibo.zip
+            unzip -oq emuiibo.zip
             rm emuiibo.zip
         } || echo "emuiibo download\033[31m failed\033[0m."
       ;;
@@ -340,7 +340,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*QuickNTP.zip' | sed 's/"//g')
         curl -sL "$download_url" -o QuickNTP.zip&& {
             echo "QuickNTP download\033[32m success\033[0m."
-            unzip -o QuickNTP.zip
+            unzip -oq QuickNTP.zip
             rm QuickNTP.zip
         } || echo "QuickNTP download\033[31m failed\033[0m."
       ;;
@@ -349,7 +349,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*Fizeau.zip' | sed 's/"//g')
         curl -sL "$download_url" -o Fizeau.zip&& {
             echo "Fizeau download\033[32m success\033[0m."
-            unzip -o Fizeau.zip
+            unzip -oq Fizeau.zip
             rm Fizeau.zip
         } || echo "Fizeau download\033[31m failed\033[0m."
       ;;
@@ -359,7 +359,7 @@ while read -r app_name; do
             echo "Zing download\033[31m failed\033[0m."
         else
             echo "Zing download\033[32m success\033[0m."
-            unzip -o Zing.zip
+            unzip -oq Zing.zip
             rm Zing.zip
         fi
       ;;
@@ -368,7 +368,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*sys-tune[^"]*.zip' | sed 's/"//g')
         curl -sL "$download_url" -o sys-tune.zip&& {
             echo "sys-tune download\033[32m success\033[0m."
-            unzip -o sys-tune.zip
+            unzip -oq sys-tune.zip
             rm sys-tune.zip
         } || echo "sys-tune download\033[31m failed\033[0m."
       ;;
@@ -377,7 +377,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*sys-patch.zip' | sed 's/"//g')
         curl -sL "$download_url" -o sys-patch.zip&& {
             echo "sys-patch download\033[32m success\033[0m."
-            unzip -o sys-patch.zip
+            unzip -oq sys-patch.zip
             rm sys-patch.zip
         } || echo "sys-patch download\033[31m failed\033[0m."
       ;;
@@ -386,7 +386,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*sys-clk[^"]*.zip' | sed 's/"//g')
         curl -sL "$download_url" -o sys-clk.zip&& {
             echo "sys-clk download\033[32m success\033[0m."
-            unzip -o sys-clk.zip
+            unzip -oq sys-clk.zip
             rm sys-clk.zip
         } || echo "sys-clk download\033[31m failed\033[0m."
       ;;
@@ -397,8 +397,8 @@ while read -r app_name; do
         download_url_2=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*OC.Toolkit.u.zip' | sed 's/"//g')
         curl -sL "$download_url_1" -o kip.zip&&curl -sL "$download_url_2" -o OC.Toolkit.u.zip&& {
             echo "OC_Toolkit_SC_EOS download\033[32m success\033[0m."
-            unzip -o kip.zip -d ./atmosphere/kips/
-            unzip -o OC.Toolkit.u.zip -d ./switch/.packages/
+            unzip -oq kip.zip -d ./atmosphere/kips/
+            unzip -oq OC.Toolkit.u.zip -d ./switch/.packages/
             rm kip.zip
             rm OC.Toolkit.u.zip
         } || echo "OC_Toolkit_SC_EOS download\033[31m failed\033[0m."
@@ -408,7 +408,7 @@ while read -r app_name; do
         download_url=$(echo "$latest_release_info" | grep -oP '"browser_download_url": "\Khttps://[^"]*MissionControl[^"]*.zip' | sed 's/"//g')
         curl -sL "$download_url" -o MissionControl.zip&& {
             echo "MissionControl download\033[32m success\033[0m."
-            unzip -o MissionControl.zip
+            unzip -oq MissionControl.zip
             rm MissionControl.zip
         } || echo "MissionControl download\033[31m failed\033[0m."
       ;;
