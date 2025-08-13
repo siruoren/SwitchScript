@@ -51,7 +51,7 @@ jobs:
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.tag_name }} ❤️ | 大气层${{ env.atmosphere_version }}个人整合包
+        name: ${{ env.tag_name }}|大气层个人整合包
         allowUpdates: true
         tag: ${{ env.tag_name }}
         commit: main
