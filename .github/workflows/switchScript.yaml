@@ -7,8 +7,8 @@ on:
     paths:
       - 'description.txt'
       - 'diy_package.sh'
-  # schedule:
-  #   - cron: 0 8 * * *
+  schedule:
+    - cron: 0 8 * * *
 
 env:
   SCRIPT_SH: diy_package.sh
