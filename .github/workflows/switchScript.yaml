@@ -37,7 +37,7 @@ jobs:
         echo "atmosphere_version=$(curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest|grep 'tag_name'|awk -F ': ' '{print$2}'|sed 's/"//g'|sed 's/,//g')">> $GITHUB_ENV
         chmod +x $SCRIPT_SH
         ./$SCRIPT_SH
-        zip -rq SwitchSD.zip SwitchSD
+        zip -rq SwitchSD_${tag_name}.zip SwitchSD
 
     - name: Read description.txt
       id: description
@@ -48,13 +48,13 @@ jobs:
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.DATE }} ❤️ | 大气层${{ env.atmosphere_version }}个人整合包
+        name: ${{ env.tag_name }} ❤️ | 大气层${{ env.atmosphere_version }}个人整合包
         allowUpdates: true
         tag: ${{ env.tag_name }}
         commit: main
         token: ${{ secrets.actions_release }}
         body: "${{ steps.description.outputs.content }}"
-        artifacts: "SwitchSD.zip"
+        artifacts: "SwitchSD_${{ env.tag_name }}.zip"
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.3.2
