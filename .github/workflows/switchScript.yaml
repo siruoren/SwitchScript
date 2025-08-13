@@ -32,12 +32,13 @@ jobs:
 
     - name: "Build & Release"
       run: |
+        tag_name=$(date +%Y%m%d)
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
-        echo "tag_name=$(date +%Y%m%d)" >> $GITHUB_ENV
+        echo "tag_name=$tag_name" >> $GITHUB_ENV
         echo "atmosphere_version=$(curl -sL https://api.github.com/repos/Atmosphere-NX/Atmosphere/releases/latest|grep 'tag_name'|awk -F ': ' '{print$2}'|sed 's/"//g'|sed 's/,//g')">> $GITHUB_ENV
         chmod +x $SCRIPT_SH
         ./$SCRIPT_SH
-        zip -rq SwitchSD_$(date +%Y%m%d).zip SwitchSD
+        zip -rq SwitchSD_$tag_name.zip SwitchSD
 
     - name: Read description.txt
       id: description
